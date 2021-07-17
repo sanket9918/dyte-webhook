@@ -18,7 +18,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     res.status(400).json({ message: err.message })
 })
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3002
 
 app.listen(port, () => {
     console.log(`Backend server up at ${port}`);
