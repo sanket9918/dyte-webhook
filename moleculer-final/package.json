@@ -1,0 +1,31 @@
+{
+  "name": "dyte-moluculer-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "moleculer-runner",
+    "docker-build": "docker build -t webhook .",
+    "dev": "moleculer-runner --repl --hot services"
+  },
+  "keywords": [
+    "moleculer",
+    "express",
+    "microservice"
+  ],
+  "author": "Sanket Mohapatra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4",
+    "moleculer": "^0.14.15",
+    "moleculer-db": "^0.8.14",
+    "moleculer-db-adapter-mongoose": "^0.8.10",
+    "moleculer-repl": "^0.6.6",
+    "moleculer-web": "^0.10.0",
+    "mongoose": "^5.13.2",
+    "uuid": "^8.3.2"
+  }
+}
