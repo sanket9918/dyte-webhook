@@ -1,11 +1,12 @@
 import { Router } from "express";
-import { deleteHook, list, register, trigger, update } from '../src/controller/hook'
-
+const { list, register, update, deleteHook, trigger } = require('../src/controller/hook')
+const { verify } = require('../middleware/verify')
 const router = Router()
-router.get('/list',list)
-router.post('/register', register)
-router.put('/update', update)
-router.delete('/delete/:id', deleteHook)
-router.post('/ip',trigger)
+
+router.route('/list').post(verify, list)
+router.route('/register').post(verify, register)
+router.route('/update').post(verify, update)
+router.route('/delete/:id').post(verify, deleteHook)
+router.route('/ip').post(verify, trigger)
 
 export default router

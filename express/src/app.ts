@@ -6,14 +6,22 @@ require('../db/mongoose')
 const users = require('../auth/userAuth')
 const app = express()
 
-/**
- * The feature of verification middleware of user has been developed as a separate concern because of ambiguity of implementation according to the situation  
- */
-const verify = require('../middleware/verify').verify
+
 app.use(express.json())
 
+/**
+ * Main route for the application functionalities
+ */
 app.use('/api', apiRouter)
+
+/**
+ * Authentication route for user
+ */
 app.use('/user', users)
+
+/**
+ * Error handler for unexpected errors in app
+ */
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     res.status(400).json({ message: err.message })
 })
